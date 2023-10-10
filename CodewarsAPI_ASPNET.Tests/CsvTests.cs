@@ -1,7 +1,7 @@
 ﻿using System;
 namespace CodewarsAPI_ASPNET.Tests
 {
-	public class CsvTests
+	public class CSVTests
 	{
 		[Fact]
     public void CSVFileNotFound()

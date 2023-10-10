@@ -1,6 +1,6 @@
 ﻿namespace CodewarsAPI_ASPNET.Tests;
 
-public class ApiTests
+public class APITests
 {
     [Theory]
     [InlineData("jshudd")]
