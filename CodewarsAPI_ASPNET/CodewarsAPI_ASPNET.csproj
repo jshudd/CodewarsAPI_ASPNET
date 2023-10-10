@@ -8,4 +8,10 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <Content Remove="wwwroot\csvFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\csvFiles\" />
+  </ItemGroup>
 </Project>
