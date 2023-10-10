@@ -11,17 +11,17 @@ public class ApiTests
     [InlineData("amoriss")]
     [InlineData("CruzSanchez")]
     [InlineData("whitstroup")]
-    public void APICallDoesReturnData_SUCCESS(string userName)
+    public void ApiCallDoesReturnData_SUCCESS(string userName)
     {
-        var result = API.CallAPI(userName);
+        var result = Api.CallApi(userName);
 
         Assert.NotNull(result);
     }
 
     [Theory]
     [InlineData("jshuddabcdefg")]
-    public void APICallDoesNOTReturnData(string userName)
+    public void ApiCallDoesNOTReturnData(string userName)
     {
-        Assert.Throws<AggregateException>(() => API.CallAPI(userName));
+        Assert.Throws<AggregateException>(() => Api.CallApi(userName));
     }
 }
