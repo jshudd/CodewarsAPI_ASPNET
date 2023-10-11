@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace CodewarsAPI_ASPNET
 {
 	public class ApiRepo : IApiRepo
@@ -7,9 +8,20 @@ namespace CodewarsAPI_ASPNET
 		{
 		}
 
-        public string CallAPI(string userName)
+        public async Task<string> CallApi(string userName)
         {
-            throw new NotImplementedException();
+            var cwURL = $"https://www.codewars.com/api/v1/users/{userName}";
+
+            var client = new HttpClient();
+
+            try
+            {
+                return await client.GetStringAsync(cwURL);
+            }
+            catch (AggregateException)
+            {
+                throw new AggregateException();
+            }
         }
     }
 }
