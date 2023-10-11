@@ -12,5 +12,10 @@ namespace CodewarsAPI_ASPNET
         public List<object>? Skills { get; set; }
         public Ranks? Ranks { get; set; }
         public CodeChallenges? CodeChallenges { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name}, {Username}, {Honor}";
+        }
     }
 }
