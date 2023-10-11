@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 namespace CodewarsAPI_ASPNET
 {
 	public class CodeChallenges
@@ -7,4 +7,3 @@ namespace CodewarsAPI_ASPNET
         public int? TotalCompleted { get; set; }
     }
 }
-
