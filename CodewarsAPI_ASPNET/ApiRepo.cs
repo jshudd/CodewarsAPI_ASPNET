@@ -8,6 +8,9 @@ namespace CodewarsAPI_ASPNET
 		{
 		}
 
+        // Deserialize code
+        // User myDeserializedClass = JsonConvert.DeserializeObject<User>(myJsonResponse);
+
         public async Task<string> CallApi(string userName)
         {
             var cwURL = $"https://www.codewars.com/api/v1/users/{userName}";
