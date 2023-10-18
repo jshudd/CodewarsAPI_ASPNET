@@ -3,6 +3,10 @@ namespace CodewarsAPI_ASPNET
 {
 	public class User
 	{
+        public User()
+        {
+        }
+
         public string? Id { get; set; }
         public string? Username { get; set; }
         public string? Name { get; set; }
@@ -12,5 +16,6 @@ namespace CodewarsAPI_ASPNET
         public List<object>? Skills { get; set; }
         public Ranks? Ranks { get; set; }
         public CodeChallenges? CodeChallenges { get; set; }
+        public string? JSON { get; set; }
     }
 }
