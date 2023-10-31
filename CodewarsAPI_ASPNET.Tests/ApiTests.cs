@@ -2,6 +2,13 @@
 
 public class APITests
 {
+    private readonly IApiRepo _repo;
+
+    public APITests(MyFixtures fixture)
+    {
+        this._repo = fixture.GetApiRepo();
+    }
+
     [Theory]
     [InlineData("jshudd")]
     [InlineData("chipelmer")]
@@ -13,7 +20,7 @@ public class APITests
     [InlineData("whitstroup")]
     public void APICallDoesReturnData_SUCCESS(string userName)
     {
-        var result = API.CallAPI(userName);
+        var result = _repo.CallApi(userName);
 
         Assert.NotNull(result);
     }
@@ -22,6 +29,6 @@ public class APITests
     [InlineData("jshuddabcdefg")]
     public void APICallDoesNOTReturnData(string userName)
     {
-        Assert.Throws<AggregateException>(() => API.CallAPI(userName));
+        Assert.ThrowsAsync<AggregateException>(() => _repo.CallApi(userName));
     }
 }
