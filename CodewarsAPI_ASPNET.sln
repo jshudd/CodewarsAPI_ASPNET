@@ -5,8 +5,6 @@ VisualStudioVersion = 25.0.1706.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodewarsAPI_ASPNET", "CodewarsAPI_ASPNET\CodewarsAPI_ASPNET.csproj", "{98A8E73F-2510-4DCC-AF27-BCC23C88EC3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodewarsAPI_ASPNET.Tests", "CodewarsAPI_ASPNET.Tests\CodewarsAPI_ASPNET.Tests.csproj", "{81548E9A-FDB9-45AA-832E-BBAEFF44203A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{98A8E73F-2510-4DCC-AF27-BCC23C88EC3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98A8E73F-2510-4DCC-AF27-BCC23C88EC3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98A8E73F-2510-4DCC-AF27-BCC23C88EC3A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{81548E9A-FDB9-45AA-832E-BBAEFF44203A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81548E9A-FDB9-45AA-832E-BBAEFF44203A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81548E9A-FDB9-45AA-832E-BBAEFF44203A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81548E9A-FDB9-45AA-832E-BBAEFF44203A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
