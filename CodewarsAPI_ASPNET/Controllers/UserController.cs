@@ -20,7 +20,7 @@ namespace CodewarsAPI_ASPNET.Controllers
                 return View(userObj);
 
             // wrap in try-catch after exception found
-            userObj.JSON = _repo.CallApi(username).ToString();
+            userObj.JSON = _repo.CallApi(username).Result;
 
             userObj = _repo.DeserializeJson(userObj);
 
