@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace CodewarsAPI_ASPNET
 {
@@ -25,6 +26,11 @@ namespace CodewarsAPI_ASPNET
             {
                 throw new AggregateException();
             }
+        }
+
+        public User DeserializeJson(User userObj)
+        {
+            return JsonConvert.DeserializeObject<User>(userObj.JSON);
         }
     }
 }
