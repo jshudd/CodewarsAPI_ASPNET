@@ -8,3 +8,17 @@
     <h1 class="display-4">Codewars Score Finder</h1>
     <p>Enter a username below to get their stats</p>
 </div>
+
+<div style="width: 20%; margin: 0 auto" class="text-center">
+    <div class="form-row align-items-center">
+        @using (Html.BeginForm("Index", "User", FormMethod.Get))
+        {
+            <div class="form-group">
+                <input type="text" name="Username" class="form-control text-center" maxlength="5" />
+            </div>
+            <br />
+
+            <input type="submit" value="Enter" class="btn btn-primary" />
+        }
+    </div>
+</div>
