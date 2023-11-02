@@ -6,7 +6,7 @@
 
 <div class="text-center">
     <h1 class="display-4">Codewars Score Finder</h1>
-    <p>Enter a username below to get their stats</p>
+    <p>Enter a Codewars username to get their stats</p>
 </div>
 
 <div style="width: 20%; margin: 0 auto" class="text-center">
@@ -25,17 +25,20 @@
 
 <br />
 
-<div class="align-items-center">
-    <table class="table">
-        <tr>
-            <th>Username</th>
-            <th>Name</th>
-            <th>Honor</th>
-        </tr>
-        <tr>
-            <td>@Model.Username</td>
-            <td>@Model.Name</td>
-            <td>@Model.Honor</td>
-        </tr>
-    </table>
-</div>
+@if (Model.Name != null)
+{
+    <div class="align-items-center">
+        <table class="table">
+            <tr>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Honor</th>
+            </tr>
+            <tr>
+                <td>@Model.Username</td>
+                <td>@Model.Name</td>
+                <td>@Model.Honor</td>
+            </tr>
+        </table>
+    </div>
+}
