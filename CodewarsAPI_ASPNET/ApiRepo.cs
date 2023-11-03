@@ -18,20 +18,19 @@ namespace CodewarsAPI_ASPNET
 
             var client = new HttpClient();
 
-            //try
-            //{
+            try
+            {
                 return await client.GetStringAsync(cwURL);
-            //return client.GetStringAsync(cwURL).Result;
-            //}
-            //catch (AggregateException)
-            //{
-            //    throw new AggregateException();
-            //}
+            }
+            catch (HttpRequestException)
+            {
+                return "incorrect";
+            }
         }
 
-        public User DeserializeJson(User userObj)
+        public User DeserializeJson(string json)
         {
-            return JsonConvert.DeserializeObject<User>(userObj.JSON);
+            return JsonConvert.DeserializeObject<User>(json);
         }
     }
 }
