@@ -17,6 +17,7 @@ namespace CodewarsAPI_ASPNET
         public Ranks? Ranks { get; set; }
         public CodeChallenges? CodeChallenges { get; set; }
         public string? JSON { get; set; }
+        public bool IncorrectUsername { get; set; }
 
 		public static List<User> UsersList { get; set; } = new List<User>();
     }
