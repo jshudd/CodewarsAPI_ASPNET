@@ -22,15 +22,15 @@ namespace CodewarsAPI_ASPNET
             {
                 return await client.GetStringAsync(cwURL);
             }
-            catch (Exception)
+            catch (HttpRequestException)
             {
-                throw new Exception();
+                return "incorrect";
             }
         }
 
-        public User DeserializeJson(User userObj)
+        public User DeserializeJson(string json)
         {
-            return JsonConvert.DeserializeObject<User>(userObj.JSON);
+            return JsonConvert.DeserializeObject<User>(json);
         }
     }
 }
