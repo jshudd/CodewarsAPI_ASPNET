@@ -13,8 +13,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\csvFiles\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\User\" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace CodewarsAPI_ASPNET
 {
@@ -17,14 +18,20 @@ namespace CodewarsAPI_ASPNET
 
             var client = new HttpClient();
 
-            try
-            {
+            //try
+            //{
                 return await client.GetStringAsync(cwURL);
-            }
-            catch (AggregateException)
-            {
-                throw new AggregateException();
-            }
+            //return client.GetStringAsync(cwURL).Result;
+            //}
+            //catch (AggregateException)
+            //{
+            //    throw new AggregateException();
+            //}
+        }
+
+        public User DeserializeJson(User userObj)
+        {
+            return JsonConvert.DeserializeObject<User>(userObj.JSON);
         }
     }
 }
