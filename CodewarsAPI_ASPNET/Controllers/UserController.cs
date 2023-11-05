@@ -1,4 +1,5 @@
 ﻿using System;
+using CodewarsAPI_ASPNET.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodewarsAPI_ASPNET.Controllers
@@ -33,6 +34,17 @@ namespace CodewarsAPI_ASPNET.Controllers
             userObj.JSON = Json;
 
             return View(userObj);
+        }
+
+        public IActionResult ViewAllGroups()
+        {
+            IEnumerable<Group> groupObj = new List<Group>();
+
+            // read all files from csv folder
+            // create groups for each file
+            // create list of groups; store in groupObj
+
+            return View(groupObj);
         }
     }
 }
