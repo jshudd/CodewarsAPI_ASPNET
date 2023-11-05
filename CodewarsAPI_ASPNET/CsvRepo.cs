@@ -11,6 +11,8 @@ namespace CodewarsAPI_ASPNET
         private static string _relativeDirPath = "wwwroot/csvFiles";
         //private readonly string _dirPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _relativeDirPath);
 
+        public IEnumerable<string>? ReadCsv(string fileName) => File.ReadAllLinesAsync(_relativeDirPath).Result.ToList();        
+
         public IEnumerable<string>? RetrieveCsvFileNames()
         {
             var fileNameList = new List<string>();

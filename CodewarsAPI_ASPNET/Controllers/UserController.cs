@@ -51,12 +51,8 @@ namespace CodewarsAPI_ASPNET.Controllers
         {
             var groupList = new List<User>();
 
-            // read csv file with filename
+            var userNames = _csvRepo.ReadCsv(fileName);
 
-            // retrieve usernames from file; return as list
-            var usernames;
-
-            // foreach usernames contact api
             foreach (var user in userNames)
             {
                 groupList.Add(_apiRepo.DeserializeJson(_apiRepo.CallApi(user).Result));
