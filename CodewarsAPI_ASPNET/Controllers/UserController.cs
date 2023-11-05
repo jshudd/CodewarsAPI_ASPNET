@@ -42,8 +42,8 @@ namespace CodewarsAPI_ASPNET.Controllers
         {
             IEnumerable<string> groupList = new List<string>();
 
-            // read all files from csv folder
-            // create list of groups; store in groupObj
+            // read all files from csv folder; store names in list
+            groupList = _csvRepo.RetrieveCsvFileNames();
 
             return View(groupList);
         }
