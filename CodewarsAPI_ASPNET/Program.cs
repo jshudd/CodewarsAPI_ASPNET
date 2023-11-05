@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddTransient<IApiRepo, ApiRepo>();
+builder.Services.AddTransient<ICsvRepo, CsvRepo>();
 
 var app = builder.Build();
 
