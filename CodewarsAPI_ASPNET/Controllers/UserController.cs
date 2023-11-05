@@ -50,6 +50,19 @@ namespace CodewarsAPI_ASPNET.Controllers
         public IActionResult ViewGroup(string fileName)
         {
             throw new NotImplementedException();
+
+            //var groupList = new List<User>();
+
+            // read csv file with filename
+
+            // retrieve usernames from file; return as list
+            //var usernames;
+
+            // foreach usernames contact api
+            //foreach (var user in userNames)
+            //{
+            //    groupList.Add(_apiRepo.CallApi(user));
+            //}
         }
     }
 }
