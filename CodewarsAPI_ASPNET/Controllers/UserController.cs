@@ -38,13 +38,17 @@ namespace CodewarsAPI_ASPNET.Controllers
 
         public IActionResult ViewAllGroups()
         {
-            IEnumerable<Group> groupObj = new List<Group>();
+            IEnumerable<string> groupList = new List<string>();
 
             // read all files from csv folder
-            // create groups for each file
             // create list of groups; store in groupObj
 
-            return View(groupObj);
+            return View(groupList);
+        }
+
+        public IActionResult ViewGroup(string fileName)
+        {
+            throw new NotImplementedException();
         }
     }
 }
