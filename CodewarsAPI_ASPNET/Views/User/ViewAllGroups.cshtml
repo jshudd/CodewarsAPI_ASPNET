@@ -2,7 +2,7 @@
     ViewData["Title"] = "User Groups";
 }
 
-@model IEnumerable<Group>
+@model IEnumerable<string>
 
 <div class="text-center">
     <h1 class="display-4">User Groups</h1>
@@ -14,10 +14,10 @@
             <th>Name</th>
         </tr>
 
-        @foreach (var group in Model)
+        @foreach (var fileName in Model)
         {
             <tr>
-                <td><a href=/User/ViewGroup/@group.Name>@group.Name</td>
+                <td><a href=/User/ViewGroup/@fileName>@fileName</td>
             </tr>
         }
 
