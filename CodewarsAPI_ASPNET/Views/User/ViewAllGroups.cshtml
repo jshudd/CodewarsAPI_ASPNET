@@ -12,14 +12,12 @@
     <table class="table">
         <tr>
             <th>Name</th>
-            <th># in Group</th>
         </tr>
 
         @foreach (var group in Model)
         {
             <tr>
                 <td><a href=/User/ViewGroup/@group.Name>@group.Name</td>
-                <td>@group.Number</td>
             </tr>
         }
 
