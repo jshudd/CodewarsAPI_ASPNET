@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "User Groups";
+}
+
+@model IEnumerable<Group>
+
+<div class="text-center">
+    <h1 class="display-4">User Groups</h1>
+</div>
+
+<div class="align-items-left">
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th># in Group</th>
+        </tr>
+
+        @foreach (var group in Model)
+        {
+            <tr>
+                <td><a href=/User/ViewGroup/@group.Name>@group.Name</td>
+                <td>@group.Number</td>
+            </tr>
+        }
+
+    </table>
+</div>
