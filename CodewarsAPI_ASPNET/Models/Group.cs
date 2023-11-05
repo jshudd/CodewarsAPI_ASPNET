@@ -12,7 +12,6 @@ namespace CodewarsAPI_ASPNET.Models
 			UserGroup = userGroup;
 		}
 
-		public int? GroupId { get; set; }
 		public string? Name { get; set; }
 
 		public IEnumerable<User> UserGroup { get; set; }
