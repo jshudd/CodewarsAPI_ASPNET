@@ -6,11 +6,13 @@ namespace CodewarsAPI_ASPNET.Controllers
 {
     public class UserController : Controller
     {
-        private readonly IApiRepo _repo;
+        private readonly IApiRepo _apiRepo;
+        private readonly ICsvRepo _csvRepo;
 
-        public UserController(IApiRepo repo)
+        public UserController(IApiRepo apiRepo, ICsvRepo csvRepo)
         {
-            _repo = repo;
+            _apiRepo = apiRepo;
+            _csvRepo = csvRepo;
         }
 
         public IActionResult Index(string username)
@@ -21,7 +23,7 @@ namespace CodewarsAPI_ASPNET.Controllers
                 return View(userObj);
 
             // wrap in try-catch after exception found
-            var Json = _repo.CallApi(username).Result;
+            var Json = _apiRepo.CallApi(username).Result;
 
             if (Json == "incorrect")
             {
@@ -29,7 +31,7 @@ namespace CodewarsAPI_ASPNET.Controllers
                 return View(userObj);
             }    
 
-            userObj = _repo.DeserializeJson(Json);
+            userObj = _apiRepo.DeserializeJson(Json);
 
             userObj.JSON = Json;
 
