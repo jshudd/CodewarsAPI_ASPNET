@@ -13,6 +13,10 @@ namespace CodewarsAPI_ASPNET.Models
 		}
 
 		public string? Name { get; set; }
+		public int? Number
+		{
+			get => UserGroup.Count();
+		}
 
 		public IEnumerable<User> UserGroup { get; set; }
 	}
