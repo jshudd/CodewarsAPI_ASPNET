@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddTransient<IApiRepo, ApiRepo>();
+builder.Services.AddTransient<ICsvRepo, CsvRepo>();
 
 var app = builder.Build();
 
@@ -23,6 +24,16 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+// Suggested by ChatGPT to fix fileName being null; ignore green squigglies, still works
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "ViewGroup",
+        pattern: "User/ViewGroup/{fileName}",
+        defaults: new { controller = "User", action = "ViewGroup" }
+    );
+});
 
 app.MapControllerRoute(
     name: "default",
