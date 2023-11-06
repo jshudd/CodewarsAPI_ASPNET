@@ -25,6 +25,16 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// Suggested by ChatGPT to fix fileName being null; ignore green squigglies, still works
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "ViewGroup",
+        pattern: "User/ViewGroup/{fileName}",
+        defaults: new { controller = "User", action = "ViewGroup" }
+    );
+});
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=User}/{action=Index}/{id?}");
