@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using CodewarsAPI_ASPNET.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -46,9 +47,12 @@ namespace CodewarsAPI_ASPNET.Controllers
 
             return View(groupList);
         }
-
+                
         public IActionResult ViewGroup(string fileName)
         {
+            // from ChatGPT: decodes fileName from Razor page
+            fileName = WebUtility.UrlDecode(fileName);
+
             var tempList = new List<User>();
 
             var userNames = _csvRepo.ReadCsv(fileName);
@@ -58,7 +62,7 @@ namespace CodewarsAPI_ASPNET.Controllers
                 tempList.Add(_apiRepo.DeserializeJson(_apiRepo.CallApi(user).Result));
             }
 
-            var groupObj = new Group(fileName, tempList);
+            var groupObj = new Group(fileName, tempList.OrderByDescending(x => x.Honor).ToList());
 
             return View(groupObj);
         }
