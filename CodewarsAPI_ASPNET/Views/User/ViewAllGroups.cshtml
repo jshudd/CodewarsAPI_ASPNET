@@ -14,12 +14,12 @@
             <th>Name</th>
         </tr>
 
-        @foreach (var fileName in Model)
+        @foreach (var fileName in @Model)
         {
             <tr>
-                <td><a href=/User/ViewGroup/@fileName>@fileName</td>
+                <td><a href=/User/ViewGroup/@fileName>@fileName</a></td>
             </tr>
         }
-
+        
     </table>
 </div>
