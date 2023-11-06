@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = $"{Model.Name}";
+}
+
+@model Group
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Name</h1>
+</div>
+
+<br />
+
+<div class="align-items-center">
+    <table class="table">
+        <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Honor</th>
+        </tr>
+
+        @foreach (var user in Model.UserGroup)
+            {
+                <tr>
+                    <td>@user.Username</td>
+                    <td>@user.Name</td>
+                    <td>@user.Honor</td>
+                </tr>
+            }
+    </table>
+</div>
