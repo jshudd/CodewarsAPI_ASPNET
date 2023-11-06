@@ -7,8 +7,9 @@ namespace CodewarsAPI_ASPNET.Models
 		{
 		}
 
-		public Group(List<User> userGroup)
+		public Group(string name, List<User> userGroup)
 		{
+			Name = name;
 			UserGroup = userGroup;
 		}
 
@@ -18,7 +19,7 @@ namespace CodewarsAPI_ASPNET.Models
 			get => UserGroup.Count();
 		}
 
-		public IEnumerable<User> UserGroup { get; set; }
+		public List<User> UserGroup { get; set; }
 	}
 }
 
