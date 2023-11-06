@@ -49,16 +49,18 @@ namespace CodewarsAPI_ASPNET.Controllers
 
         public IActionResult ViewGroup(string fileName)
         {
-            var groupList = new List<User>();
+            var tempList = new List<User>();
 
             var userNames = _csvRepo.ReadCsv(fileName);
 
             foreach (var user in userNames)
             {
-                groupList.Add(_apiRepo.DeserializeJson(_apiRepo.CallApi(user).Result));
+                tempList.Add(_apiRepo.DeserializeJson(_apiRepo.CallApi(user).Result));
             }
 
-            return View(groupList);
+            var groupObj = new Group(fileName, tempList);
+
+            return View(groupObj);
         }
     }
 }
