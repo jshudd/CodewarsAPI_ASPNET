@@ -11,13 +11,14 @@
 <div class="align-items-left">
     <table class="table">
         <tr>
-            <th>Name</th>
+            <th>Group Name</th>
         </tr>
 
         @foreach (var fileName in @Model)
         {
             <tr>
-                <td><a href=/User/ViewGroup/@fileName>@fileName</a></td>
+                @*from ChatGPT encodes fileName so # symbol shows up*@
+                <td><a href="@Url.Action("ViewGroup", "User", new { fileName = System.Net.WebUtility.UrlEncode(fileName) })">@fileName</a></td>
             </tr>
         }
         
