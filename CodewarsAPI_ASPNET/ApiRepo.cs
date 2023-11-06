@@ -30,6 +30,11 @@ namespace CodewarsAPI_ASPNET
 
         public User DeserializeJson(string json)
         {
+            if (json == "incorrect")
+            {
+                return new User() { Name = "Incorrect username", Honor = 0 };
+            }
+
             return JsonConvert.DeserializeObject<User>(json);
         }
     }

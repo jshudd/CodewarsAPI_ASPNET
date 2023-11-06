@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "User Groups";
+}
+
+@model IEnumerable<string>
+
+<div class="text-center">
+    <h1 class="display-4">User Groups</h1>
+</div>
+
+<div class="align-items-left">
+    <table class="table">
+        <tr>
+            <th>Group Name</th>
+        </tr>
+
+        @foreach (var fileName in @Model)
+        {
+            <tr>
+                @*from ChatGPT encodes fileName so # symbol shows up*@
+                <td><a href="@Url.Action("ViewGroup", "User", new { fileName = System.Net.WebUtility.UrlEncode(fileName) })">@fileName</a></td>
+            </tr>
+        }
+        
+    </table>
+</div>
