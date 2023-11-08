@@ -39,6 +39,15 @@ namespace CodewarsAPI_ASPNET.Controllers
             return View(userObj);
         }
 
+        public IActionResult VersusStart()
+        {
+            IEnumerable<string> groupList = new List<string>();
+
+            groupList = _csvRepo.RetrieveCsvFileNames();
+
+            return View(groupList);
+        }
+
         public IActionResult ViewAllGroups()
         {
             IEnumerable<string> groupList = new List<string>();
