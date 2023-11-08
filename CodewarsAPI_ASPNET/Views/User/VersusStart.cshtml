@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Versus Mode";
+}
+
+@model IEnumerable<string>
+
+<div class="text-center">
+    <h1 class="display-4">Versus Mode</h1>
+</div>
+
+<div>
+    <p>
+        Select the first group below that you want to compare
+    </p>
+</div>
+
+<div class="align-items-left">
+    <table class="table">
+        <tr>
+            <th>Group Name</th>
+        </tr>
+
+        @foreach (var fileName in @Model)
+        {
+            <tr>
+                <td><a href="@Url.Action("VersusNext", "User", new { fileName = System.Net.WebUtility.UrlEncode(fileName) })">@fileName</a></td>
+            </tr>
+        }
+
+    </table>
+</div>
