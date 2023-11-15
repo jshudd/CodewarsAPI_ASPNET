@@ -39,6 +39,37 @@ namespace CodewarsAPI_ASPNET.Controllers
             return View(userObj);
         }
 
+        public IActionResult Versus(/*Group group*/)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IActionResult VersusNext(string fileName)
+        {
+            fileName = WebUtility.UrlDecode(fileName);
+
+            var tempList = new List<User>();
+
+            var userNames = _csvRepo.ReadCsv(fileName);
+
+            foreach (var user in userNames)
+            {
+                tempList.Add(_apiRepo.DeserializeJson(_apiRepo.CallApi(user).Result));
+            }
+
+            var groupObj = new Group(fileName, tempList.OrderByDescending(x => x.Honor).ToList());
+
+            var tempList2 = new List<string>();
+
+            tempList2 = _csvRepo.RetrieveCsvFileNames().ToList();
+
+            tempList2.Remove(fileName);
+
+            groupObj.FileNames = tempList2;
+
+            return View(groupObj);
+        }
+
         public IActionResult VersusStart()
         {
             IEnumerable<string> groupList = new List<string>();
