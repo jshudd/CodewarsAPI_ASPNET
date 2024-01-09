@@ -39,9 +39,37 @@ namespace CodewarsAPI_ASPNET.Controllers
             return View(userObj);
         }
 
-        public IActionResult Versus(/*Group group*/)
+        public IActionResult Versus(VsGroup versus)
         {
-            throw new NotImplementedException();
+            versus.FileNameA = WebUtility.UrlDecode(versus.FileNameA);
+            versus.FileNameB = WebUtility.UrlDecode(versus.FileNameB);
+
+            var groupA = new Group();
+            var groupB = new Group();
+
+            var tempList = new List<User>();
+
+            var userNames = _csvRepo.ReadCsv(versus.FileNameA);
+
+            foreach (var user in userNames)
+            {
+                tempList.Add(_apiRepo.DeserializeJson(_apiRepo.CallApi(user).Result));
+            }
+
+            versus.GroupA = new Group(versus.FileNameA, tempList.OrderByDescending(x => x.Honor).ToList());
+
+            tempList.Clear();
+
+            userNames = _csvRepo.ReadCsv(versus.FileNameB);
+
+            foreach (var user in userNames)
+            {
+                tempList.Add(_apiRepo.DeserializeJson(_apiRepo.CallApi(user).Result));
+            }
+
+            versus.GroupB = new Group(versus.FileNameB, tempList.OrderByDescending(x => x.Honor).ToList());
+
+            return View(versus);
         }
 
         public IActionResult VersusNext(string fileName)
