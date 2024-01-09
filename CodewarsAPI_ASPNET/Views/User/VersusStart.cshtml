@@ -8,24 +8,67 @@
     <h1 class="display-4">Vs Mode</h1>
 </div>
 
-<div>
-    <p>
-        Select the <u>first</u> group that you want for Vs Mode
-    </p>
-</div>
-
-<div class="align-items-left">
-    <table class="table">
-        <tr>
-            <th>Group Name</th>
-        </tr>
-
-        @foreach (var fileName in @Model)
-        {
+@using (Html.BeginForm("Versus", "VsGroup", "Post"))
+{
+    <div>
+        <table class="table">
             <tr>
-                <td><a href="@Url.Action("VersusNext", "User", new { fileName = System.Net.WebUtility.UrlEncode(fileName) })">@fileName</a></td>
+                <th>Group A</th>
+                <th>Group B</th>
             </tr>
-        }
 
-    </table>
-</div>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for=""></label>
+                        <select class="form-control" name="FileNameA" value="">
+                            @foreach (var fileName in Model)
+                            {
+                                <option value="@fileName">@fileName</option>
+                            }
+                        </select>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="form-group">
+                        <label for=""></label>
+                        <select class="form-control" name="FileNameB" value="">
+                            @foreach (var fileName in Model)
+                            {
+                                <option value="@fileName">@fileName</option>
+                            }
+                        </select>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <input type="submit" value="Select" class="btn btn-primary" />
+            </tr>
+        </table>
+    </div>
+}
+
+
+@*<div>
+        <p>
+            Select the <u>first</u> group that you want for Vs Mode
+        </p>
+    </div>
+
+    <div class="align-items-left">
+        <table class="table">
+            <tr>
+                <th>Group Name</th>
+            </tr>
+
+            @foreach (var fileName in @Model)
+            {
+                <tr>
+                    <td><a href="@Url.Action("VersusNext", "User", new { fileName = System.Net.WebUtility.UrlEncode(fileName) })">@fileName</a></td>
+                </tr>
+            }
+
+        </table>
+    </div>*@
