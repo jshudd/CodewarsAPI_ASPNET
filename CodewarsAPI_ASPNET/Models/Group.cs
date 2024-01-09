@@ -19,7 +19,7 @@ namespace CodewarsAPI_ASPNET.Models
 			get => UserGroup.Count();
 		}
 
-		public static List<User> UserGroup { get; set; } = new List<User>();
+		public List<User> UserGroup { get; set; } = new List<User>();
 
 		public List<string>FileNames { get; set; }
 	}
