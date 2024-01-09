@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Vs Mode";
+}
+
+@model VsGroup
+
+<div class="text-center">
+    <h1 class="display-4">Vs Mode</h1>
+    <h2 class="display-4">@Model.FileNameA Vs @Model.FileNameB</h2>
+</div>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>Group A</th>
+            <th>Group B</th>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Honor</th>
+            <th></th>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Honor</th>
+        </tr>
+        <tr>
+            @foreach (var user in Model.GroupA.UserGroup)
+            {
+                <td>@user.Username</td>
+                <td>@user.Name</td>
+                <td>@user.Honor</td>
+            }
+            <td></td>
+            @foreach (var user in Model.GroupB.UserGroup)
+            {
+                <td>@user.Username</td>
+                <td>@user.Name</td>
+                <td>@user.Honor</td>
+            }
+        </tr>
+    </table>
+</div>
