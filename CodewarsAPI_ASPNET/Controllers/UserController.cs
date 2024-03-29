@@ -39,64 +39,64 @@ namespace CodewarsAPI_ASPNET.Controllers
             return View(userObj);
         }
 
-        public IActionResult Versus(VsGroup versus)
-        {
-            versus.FileNameA = WebUtility.UrlDecode(versus.FileNameA);
-            versus.FileNameB = WebUtility.UrlDecode(versus.FileNameB);
+        //public IActionResult Versus(VsGroup versus)
+        //{
+        //    versus.FileNameA = WebUtility.UrlDecode(versus.FileNameA);
+        //    versus.FileNameB = WebUtility.UrlDecode(versus.FileNameB);
 
-            var groupA = new Group();
-            var groupB = new Group();
+        //    var groupA = new Group();
+        //    var groupB = new Group();
 
-            var tempList = new List<User>();
+        //    var tempList = new List<User>();
 
-            var userNames = _csvRepo.ReadCsv(versus.FileNameA);
+        //    var userNames = _csvRepo.ReadCsv(versus.FileNameA);
 
-            foreach (var user in userNames)
-            {
-                tempList.Add(_apiRepo.DeserializeJson(_apiRepo.CallApi(user).Result));
-            }
+        //    foreach (var user in userNames)
+        //    {
+        //        tempList.Add(_apiRepo.DeserializeJson(_apiRepo.CallApi(user).Result));
+        //    }
 
-            versus.GroupA = new Group(versus.FileNameA, tempList.OrderByDescending(x => x.Honor).ToList());
+        //    versus.GroupA = new Group(versus.FileNameA, tempList.OrderByDescending(x => x.Honor).ToList());
 
-            tempList.Clear();
+        //    tempList.Clear();
 
-            userNames = _csvRepo.ReadCsv(versus.FileNameB);
+        //    userNames = _csvRepo.ReadCsv(versus.FileNameB);
 
-            foreach (var user in userNames)
-            {
-                tempList.Add(_apiRepo.DeserializeJson(_apiRepo.CallApi(user).Result));
-            }
+        //    foreach (var user in userNames)
+        //    {
+        //        tempList.Add(_apiRepo.DeserializeJson(_apiRepo.CallApi(user).Result));
+        //    }
 
-            versus.GroupB = new Group(versus.FileNameB, tempList.OrderByDescending(x => x.Honor).ToList());
+        //    versus.GroupB = new Group(versus.FileNameB, tempList.OrderByDescending(x => x.Honor).ToList());
 
-            return View(versus);
-        }
+        //    return View(versus);
+        //}
 
-        public IActionResult VersusNext(string fileName)
-        {
-            fileName = WebUtility.UrlDecode(fileName);
+        //public IActionResult VersusNext(string fileName)
+        //{
+        //    fileName = WebUtility.UrlDecode(fileName);
 
-            var tempList = new List<User>();
+        //    var tempList = new List<User>();
 
-            var userNames = _csvRepo.ReadCsv(fileName);
+        //    var userNames = _csvRepo.ReadCsv(fileName);
 
-            foreach (var user in userNames)
-            {
-                tempList.Add(_apiRepo.DeserializeJson(_apiRepo.CallApi(user).Result));
-            }
+        //    foreach (var user in userNames)
+        //    {
+        //        tempList.Add(_apiRepo.DeserializeJson(_apiRepo.CallApi(user).Result));
+        //    }
 
-            var groupObj = new Group(fileName, tempList.OrderByDescending(x => x.Honor).ToList());
+        //    var groupObj = new Group(fileName, tempList.OrderByDescending(x => x.Honor).ToList());
 
-            var tempList2 = new List<string>();
+        //    var tempList2 = new List<string>();
 
-            tempList2 = _csvRepo.RetrieveCsvFileNames().ToList();
+        //    tempList2 = _csvRepo.RetrieveCsvFileNames().ToList();
 
-            tempList2.Remove(fileName);
+        //    tempList2.Remove(fileName);
 
-            groupObj.FileNames = tempList2;
+        //    groupObj.FileNames = tempList2;
 
-            return View(groupObj);
-        }
+        //    return View(groupObj);
+        //}
 
         public IActionResult ViewAllGroups()
         {
