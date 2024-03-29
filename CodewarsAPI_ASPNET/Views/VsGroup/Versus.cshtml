@@ -10,34 +10,46 @@
 </div>
 
 <div>
-    <table class="table">
+    <table class="table table-bordered table-hover">
         <tr>
             <th>Group A</th>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Honor</th>
+        </tr>
+
+        @foreach (var user in Model.GroupA.UserGroup)
+        {
+            <tr class="text-center">
+                <td>@user.Username</td>
+                <td>@user.Name</td>
+                <td>@user.Honor</td>
+            </tr>
+        }
+    </table>
+</div>
+
+<div>
+    <table class="table table-bordered table-hover">
+        <tr>
             <th>Group B</th>
         </tr>
         <tr>
             <th>Username</th>
             <th>Name</th>
             <th>Honor</th>
-            <th></th>
-            <th>Username</th>
-            <th>Name</th>
-            <th>Honor</th>
         </tr>
-        <tr>
-            @foreach (var user in Model.GroupA.UserGroup)
-            {
+
+        @foreach (var user in Model.GroupB.UserGroup)
+        {
+            <tr class="text-center">
+
                 <td>@user.Username</td>
                 <td>@user.Name</td>
                 <td>@user.Honor</td>
-            }
-            <td></td>
-            @foreach (var user in Model.GroupB.UserGroup)
-            {
-                <td>@user.Username</td>
-                <td>@user.Name</td>
-                <td>@user.Honor</td>
-            }
-        </tr>
+            </tr>
+        }
     </table>
 </div>
