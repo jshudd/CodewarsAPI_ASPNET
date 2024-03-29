@@ -98,14 +98,14 @@ namespace CodewarsAPI_ASPNET.Controllers
             return View(groupObj);
         }
 
-        public IActionResult VersusStart()
-        {
-            IEnumerable<string> groupList = new List<string>();
+        //public IActionResult VersusStart()
+        //{
+        //    IEnumerable<string> groupList = new List<string>();
 
-            groupList = _csvRepo.RetrieveCsvFileNames();
+        //    groupList = _csvRepo.RetrieveCsvFileNames();
 
-            return View(groupList);
-        }
+        //    return View(groupList);
+        //}
 
         public IActionResult ViewAllGroups()
         {
