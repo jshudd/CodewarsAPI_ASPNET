@@ -6,50 +6,72 @@
 
 <div class="text-center">
     <h1 class="display-4">Vs Mode</h1>
-    <h2 class="display-4">@Model.FileNameA Vs @Model.FileNameB</h2>
+    </div>
+<div class="text-center">
+    <h3 class="display-4">@Model.FileNameA Vs @Model.FileNameB</h3>
 </div>
 
-<div>
-    <table class="table table-bordered table-hover">
-        <tr>
-            <th>Group A</th>
-        </tr>
-        <tr>
-            <th>Username</th>
-            <th>Name</th>
-            <th>Honor</th>
-        </tr>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Group A</th>
+                            <th>Total Honor: @Model.GroupA.GroupHonorTotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Username</th>
+                            <th>Name</th>
+                            <th>Honor</th>
+                        </tr>
 
-        @foreach (var user in Model.GroupA.UserGroup)
-        {
-            <tr class="text-center">
-                <td>@user.Username</td>
-                <td>@user.Name</td>
-                <td>@user.Honor</td>
-            </tr>
-        }
-    </table>
-</div>
+                        @foreach (var user in Model.GroupA.UserGroup)
+                        {
+                            <tr class="text-center">
+                                <td>@user.Username</td>
+                                <td>@user.Name</td>
+                                <td>@user.Honor</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-<div>
-    <table class="table table-bordered table-hover">
-        <tr>
-            <th>Group B</th>
-        </tr>
-        <tr>
-            <th>Username</th>
-            <th>Name</th>
-            <th>Honor</th>
-        </tr>
+        <div class="col-md-6">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Group B</th>
+                            <th>Total Honor: @Model.GroupB.GroupHonorTotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Username</th>
+                            <th>Name</th>
+                            <th>Honor</th>
+                        </tr>
 
-        @foreach (var user in Model.GroupB.UserGroup)
-        {
-            <tr class="text-center">
+                        @foreach (var user in Model.GroupB.UserGroup)
+                        {
+                            <tr class="text-center">
 
-                <td>@user.Username</td>
-                <td>@user.Name</td>
-                <td>@user.Honor</td>
-            </tr>
-        }
-    </table>
+                                <td>@user.Username</td>
+                                <td>@user.Name</td>
+                                <td>@user.Honor</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
