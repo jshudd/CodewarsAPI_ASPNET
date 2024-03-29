@@ -11,7 +11,7 @@
 @using (Html.BeginForm("Versus", "VsGroup", "Post"))
 {
     <div>
-        <table class="table">
+        <table class="table table-bordered">
             <tr>
                 <th>Group A</th>
                 <th>Group B</th>
@@ -44,7 +44,7 @@
             </tr>
         </table>
     </div>
-    <div>
+    <div class="d-flex justify-content-center align-items-center">
         <input type="submit" value="Select" class="btn btn-primary" />
     </div>
 }
