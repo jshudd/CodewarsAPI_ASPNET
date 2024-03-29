@@ -3,6 +3,11 @@ namespace CodewarsAPI_ASPNET.Models
 {
 	public class VsGroup
 	{
+		public VsGroup()
+		{
+
+		}
+
 		public VsGroup(string fileNameA, string fileNameB)
 		{
 			FileNameA = fileNameA;
