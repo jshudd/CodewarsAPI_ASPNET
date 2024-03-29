@@ -12,11 +12,7 @@ namespace CodewarsAPI_ASPNET.Models
 		public string FileNameA { get; set; }
         public string FileNameB { get; set; }
 
-		public Group GroupA
-		{
-			get;
-			set;
-		}
+		public Group GroupA { get; set; }
 
 		public Group GroupB { get; set; }
 	}
