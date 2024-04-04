@@ -10,11 +10,13 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
     <Content Remove="wwwroot\csvFiles\" />
+    <Content Remove="wwwroot\csvFiles\oldClasses\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\csvFiles\" />
     <Folder Include="Views\User\" />
     <Folder Include="Views\VsGroup\" />
+    <Folder Include="wwwroot\csvFiles\oldClasses\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
