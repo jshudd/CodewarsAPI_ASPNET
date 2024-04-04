@@ -11,6 +11,9 @@
     <h3 class="display-4">@Model.FileNameA Vs @Model.FileNameB</h3>
 </div>
 
+<br />
+<br />
+
 <div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -19,7 +22,7 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Group A</th>
+                            <th>@Model.FileNameA</th>
                             <th>Total Honor: @Model.GroupA.GroupHonorTotal</th>
                         </tr>
                     </thead>
@@ -49,7 +52,7 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Group B</th>
+                            <th>@Model.FileNameB</th>
                             <th>Total Honor: @Model.GroupB.GroupHonorTotal</th>
                         </tr>
                     </thead>
