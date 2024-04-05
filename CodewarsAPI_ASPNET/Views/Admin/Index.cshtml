@@ -1,2 +1,18 @@
-﻿@model  Admin
+﻿@model Admin
 
+<h1>Admin Access</h1>
+<br />
+<br />
+<div>
+    @using (Html.BeginForm("Login", "Admin", "Post"))
+    {
+        <label asp-for="UserName" class="control-label">UserName</label>
+        <input type="text" name="UserName" class="form-control" value="" />
+        <br />
+
+        <label asp-for="PW" class="control-label">Password</label>
+        <input type="text" name="PW" class="form-control" value="" />
+
+        <input type="submit" value="Submit" class="btn btn-primary" />
+    }
+</div>
