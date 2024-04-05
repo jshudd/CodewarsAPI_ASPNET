@@ -17,6 +17,7 @@
     <Folder Include="Views\User\" />
     <Folder Include="Views\VsGroup\" />
     <Folder Include="wwwroot\csvFiles\oldClasses\" />
+    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
@@ -24,5 +25,6 @@
   <ItemGroup>
     <None Remove="Views\User\" />
     <None Remove="Views\VsGroup\" />
+    <None Remove="Views\Admin\" />
   </ItemGroup>
 </Project>
