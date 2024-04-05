@@ -7,7 +7,7 @@ namespace CodewarsAPI_ASPNET.Models
 		{
 		}
 
-		public bool IsCorrectPW { get; set; }
+		public bool IsCorrectPW { get; set; } = false;
 		public string UserName { get; set; }
 		public string PW { get; set; }
 	}
